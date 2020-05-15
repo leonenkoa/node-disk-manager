@@ -38,12 +38,12 @@ func convertBlockDeviceAPIListToBlockDeviceList(in *api.BlockDeviceList, out *[]
 func convertBlockDeviceAPIToBlockDevice(in *api.BlockDevice, out *blockdevice.BlockDevice) error {
 	out.UUID = in.Name
 
-	//labels
+	// labels
 	out.NodeAttributes = make(blockdevice.NodeAttribute)
 	out.NodeAttributes[blockdevice.HostName] = in.Labels[KubernetesHostNameLabel]
 	out.NodeAttributes[blockdevice.NodeName] = in.Spec.NodeAttributes.NodeName
 
-	//spec
+	// spec
 	out.DevPath = in.Spec.Path
 	out.FSInfo.FileSystem = in.Spec.FileSystem.Type
 
@@ -52,7 +52,7 @@ func convertBlockDeviceAPIToBlockDevice(in *api.BlockDevice, out *blockdevice.Bl
 	out.FSInfo.MountPoint = append(out.FSInfo.MountPoint, in.Spec.FileSystem.Mountpoint)
 	out.DeviceAttributes.DeviceType = in.Spec.Details.DeviceType
 
-	//status
+	// status
 	out.Status.State = string(in.Status.State)
 	out.Status.ClaimPhase = string(in.Status.ClaimState)
 

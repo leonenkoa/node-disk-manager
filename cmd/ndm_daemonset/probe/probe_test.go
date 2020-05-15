@@ -17,9 +17,10 @@ limitations under the License.
 package probe
 
 import (
-	"github.com/openebs/node-disk-manager/blockdevice"
 	"sync"
 	"testing"
+
+	"github.com/openebs/node-disk-manager/blockdevice"
 
 	"github.com/openebs/node-disk-manager/cmd/ndm_daemonset/controller"
 	"github.com/stretchr/testify/assert"

@@ -17,8 +17,9 @@ limitations under the License.
 package udev
 
 import (
-	"github.com/openebs/node-disk-manager/integration_tests/utils"
 	"strings"
+
+	"github.com/openebs/node-disk-manager/integration_tests/utils"
 )
 
 // UDEV events available in the system

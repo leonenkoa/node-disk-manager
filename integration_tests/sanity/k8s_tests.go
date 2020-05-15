@@ -17,10 +17,9 @@ limitations under the License.
 package sanity
 
 import (
-	. "github.com/onsi/ginkgo"
-	. "github.com/onsi/gomega"
-	"github.com/openebs/node-disk-manager/integration_tests/k8s"
 	"strings"
+
+	"github.com/openebs/node-disk-manager/integration_tests/k8s"
 )
 
 const (

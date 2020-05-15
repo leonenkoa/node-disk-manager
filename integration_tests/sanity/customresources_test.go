@@ -17,12 +17,11 @@ limitations under the License.
 package sanity
 
 import (
-	. "github.com/onsi/ginkgo"
-	. "github.com/onsi/gomega"
+	"strings"
+
 	"github.com/openebs/node-disk-manager/integration_tests/k8s"
 	"github.com/openebs/node-disk-manager/integration_tests/udev"
 	"github.com/openebs/node-disk-manager/pkg/apis/openebs/v1alpha1"
-	"strings"
 )
 
 var _ = Describe("Device Discovery Tests", func() {

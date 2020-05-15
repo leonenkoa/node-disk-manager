@@ -26,9 +26,9 @@ import (
 	"github.com/spf13/cobra"
 )
 
-//NewCmdStart starts the ndm controller
+// NewCmdStart starts the ndm controller
 func NewCmdStart() *cobra.Command {
-	//var target string
+	// var target string
 	getCmd := &cobra.Command{
 		Use:   "start",
 		Short: "Node disk controller",

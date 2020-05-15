@@ -17,10 +17,11 @@ limitations under the License.
 package filter
 
 import (
-	"github.com/openebs/node-disk-manager/blockdevice"
 	"strings"
 	"sync"
 	"testing"
+
+	"github.com/openebs/node-disk-manager/blockdevice"
 
 	"github.com/openebs/node-disk-manager/cmd/ndm_daemonset/controller"
 	"github.com/stretchr/testify/assert"

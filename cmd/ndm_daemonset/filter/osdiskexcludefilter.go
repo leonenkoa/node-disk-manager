@@ -17,8 +17,9 @@ limitations under the License.
 package filter
 
 import (
-	"k8s.io/klog"
 	"strings"
+
+	"k8s.io/klog"
 
 	"github.com/openebs/node-disk-manager/blockdevice"
 	"github.com/openebs/node-disk-manager/cmd/ndm_daemonset/controller"

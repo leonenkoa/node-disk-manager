@@ -104,7 +104,7 @@ func (m *monitor) process(fd int) error {
 	return nil
 }
 
-//Monitor start monitoring on udev source
+// Monitor start monitoring on udev source
 func Monitor() {
 	monitor, err := newMonitor()
 	if err != nil {

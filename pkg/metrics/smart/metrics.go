@@ -36,7 +36,7 @@ type MetricsData struct {
 	errorRequestCount  prometheus.Counter
 }
 
-//MetricsLabels are the labels that are available on the prometheus metrics
+// MetricsLabels are the labels that are available on the prometheus metrics
 type MetricsLabels struct {
 	UUID     string
 	Path     string

@@ -18,20 +18,20 @@ package util
 
 import "syscall"
 
-//FD_SET add a given file descriptor from  a  set
-//it perform bit shift operations and set fdset.
-//ie if value of i is 2 then it will set fdset's value as {[16]int64{4}}
+// FD_SET add a given file descriptor from  a  set
+// it perform bit shift operations and set fdset.
+// ie if value of i is 2 then it will set fdset's value as {[16]int64{4}}
 func FD_SET(p *syscall.FdSet, i int) {
 	p.Bits[i/64] |= 1 << (uint(i) % 64)
 }
 
-//FD_ISSET tests to see if a file descriptor is part of the set
+// FD_ISSET tests to see if a file descriptor is part of the set
 func FD_ISSET(p *syscall.FdSet, i int) bool {
 	return (p.Bits[i/64] & (1 << (uint(i) % 64))) != 0
 }
 
-//FD_ZERO clears a set
-//it perform bit shift operations and clear fdset.
+// FD_ZERO clears a set
+// it perform bit shift operations and clear fdset.
 func FD_ZERO(p *syscall.FdSet) {
 	for i := range p.Bits {
 		p.Bits[i] = 0

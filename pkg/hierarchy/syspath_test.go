@@ -17,8 +17,9 @@ limitations under the License.
 package hierarchy
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_getParent(t *testing.T) {

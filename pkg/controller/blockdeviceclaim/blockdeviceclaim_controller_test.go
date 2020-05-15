@@ -123,8 +123,8 @@ func TestBlockDeviceClaimController(t *testing.T) {
 	r.CheckBlockDeviceClaimStatus(t, req, openebsv1alpha1.BlockDeviceClaimStatusDone)
 
 	r.DeviceRequestedHappyPathTest(t, req)
-	//TODO: Need to find a way to update deletion timestamp
-	//r.DeleteBlockDeviceClaimedTest(t, req)
+	// TODO: Need to find a way to update deletion timestamp
+	// r.DeleteBlockDeviceClaimedTest(t, req)
 }
 
 func (r *ReconcileBlockDeviceClaim) DeleteBlockDeviceClaimedTest(t *testing.T,

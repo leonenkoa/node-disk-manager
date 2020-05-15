@@ -31,7 +31,7 @@ func TestStartHttpServer(t *testing.T) {
 	}
 	ErrorMessages := make(chan error)
 	go func() {
-		//Block port 9090 and attempt to start http server at 9090.
+		// Block port 9090 and attempt to start http server at 9090.
 		if p1, err := net.Listen("tcp", "localhost:9090"); err == nil {
 			defer p1.Close()
 		}

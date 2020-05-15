@@ -17,17 +17,16 @@ limitations under the License.
 package controller
 
 import (
+	"fmt"
 	"io/ioutil"
+	"os"
+	"path"
+	"strconv"
 	"strings"
 
 	"github.com/openebs/node-disk-manager/blockdevice"
 	"github.com/openebs/node-disk-manager/pkg/util"
 	"k8s.io/klog"
-
-	"fmt"
-	"os"
-	"path"
-	"strconv"
 )
 
 /*
@@ -53,21 +52,21 @@ const (
 	// be created inside specified directory (EnvSparseFileDir)
 	// and an associated BlockDevice CR will be added to Kubernetes.
 	EnvSparseFileDir = "SPARSE_FILE_DIR"
-	//EnvSparseFileSize define the size of created sparse file
+	// EnvSparseFileSize define the size of created sparse file
 	EnvSparseFileSize = "SPARSE_FILE_SIZE"
-	//EnvSparseFileCount defines the number of sparse files to be created
+	// EnvSparseFileCount defines the number of sparse files to be created
 	EnvSparseFileCount = "SPARSE_FILE_COUNT"
 
-	//SparseFileName is a name of Sparse file
+	// SparseFileName is a name of Sparse file
 	SparseFileName = "ndm-sparse.img"
-	//SparseFileDefaultSize defines the default sparse file default size
+	// SparseFileDefaultSize defines the default sparse file default size
 	SparseFileDefaultSize = int64(1073741824)
-	//SparseFileMinSize defines the minimum size for sparse file
+	// SparseFileMinSize defines the minimum size for sparse file
 	SparseFileMinSize = int64(1073741824)
-	//SparseFileDefaultCount defines the default sparse count files
+	// SparseFileDefaultCount defines the default sparse count files
 	SparseFileDefaultCount = "1"
 
-	//SparseBlockDevicePrefix defines the prefix for the sparse device
+	// SparseBlockDevicePrefix defines the prefix for the sparse device
 	SparseBlockDevicePrefix = "sparse-"
 )
 
@@ -218,7 +217,7 @@ func (c *Controller) MarkSparseBlockDeviceStateActive(sparseFile string, sparseF
 
 	BlockDeviceDetails.Capacity = uint64(sparseFileInfo.Size())
 
-	//If a BlockDevice CR already exits, update it. If not create a new one.
+	// If a BlockDevice CR already exits, update it. If not create a new one.
 	klog.Info("Updating the BlockDevice CR for Sparse file: ", BlockDeviceDetails.UUID)
 	c.CreateBlockDevice(BlockDeviceDetails.ToDevice())
 }

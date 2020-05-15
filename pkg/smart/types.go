@@ -16,14 +16,14 @@ package smart
 // SCSI generic (sg)
 // See dxfer_direction http://sg.danny.cz/sg/p/sg_v3_ho.html
 const (
-	SGDxferNone      = -1     //SCSI Test Unit Ready command
-	SGDxferToDev     = -2     //SCSI WRITE command
-	SGDxferFromDev   = -3     //SCSI READ command
-	SGDxferToFromDev = -4     //relevant to indirect IO (otherwise it is treated like SGDxferFromDev)
-	SGInfoOk         = 0x0    //no sense, host nor driver "noise" or error
-	SGInfoOkMask     = 0x1    //indicates whether some error or status field is non-zero
-	SGIO             = 0x2285 //scsi generic ioctl command
-	DefaultTimeout   = 20000  //DefaultTimeout in millisecs
+	SGDxferNone      = -1     // SCSI Test Unit Ready command
+	SGDxferToDev     = -2     // SCSI WRITE command
+	SGDxferFromDev   = -3     // SCSI READ command
+	SGDxferToFromDev = -4     // relevant to indirect IO (otherwise it is treated like SGDxferFromDev)
+	SGInfoOk         = 0x0    // no sense, host nor driver "noise" or error
+	SGInfoOkMask     = 0x1    // indicates whether some error or status field is non-zero
+	SGIO             = 0x2285 // scsi generic ioctl command
+	DefaultTimeout   = 20000  // DefaultTimeout in millisecs
 )
 
 // ATA command being used
@@ -66,10 +66,10 @@ const (
 // Table 45 of T13/2161-D Revision 5, See http://www.t13.org/Documents/UploadedDocuments/docs2013/d2161r5-ATAATAPI_Command_Set_-_3.pdf
 // Table 55 of T13/BSR INCITS 529 Revision 18 , See http://t13.org/Documents/UploadedDocuments/docs2017/di529r18-ATAATAPI_Command_Set_-_4.pdf
 var ataMajorVersions = map[int]string{
-	1:  "ATA-1",       //obsolete
-	2:  "ATA-2",       //obsolete
-	3:  "ATA-3",       //obsolete
-	4:  "ATA-ATAPI-4", //obsolete
+	1:  "ATA-1",       // obsolete
+	2:  "ATA-2",       // obsolete
+	3:  "ATA-3",       // obsolete
+	4:  "ATA-ATAPI-4", // obsolete
 	5:  "ATA-ATAPI-5",
 	6:  "ATA-ATAPI-6",
 	7:  "ATA-ATAPI-7",

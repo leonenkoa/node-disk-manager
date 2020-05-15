@@ -18,6 +18,7 @@ package command
 
 import (
 	goflag "flag"
+
 	"github.com/openebs/node-disk-manager/cmd/ndm_daemonset/controller"
 	"github.com/openebs/node-disk-manager/pkg/version"
 
@@ -52,8 +53,8 @@ func NewNodeDiskManager() (*cobra.Command, error) {
 	_ = goflag.CommandLine.Parse([]string{})
 
 	cmd.AddCommand(
-		NewCmdBlockDevice(), //Add new command on block device
-		NewCmdStart(),       //Add new command to start the ndm controller
+		NewCmdBlockDevice(), // Add new command on block device
+		NewCmdStart(),       // Add new command to start the ndm controller
 	)
 
 	return cmd, nil

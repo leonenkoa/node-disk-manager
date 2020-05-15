@@ -18,11 +18,12 @@ package udev
 
 import (
 	"fmt"
-	"github.com/openebs/node-disk-manager/integration_tests/utils"
 	"math/rand"
 	"os"
 	"strconv"
 	"time"
+
+	"github.com/openebs/node-disk-manager/integration_tests/utils"
 )
 
 // Disk and system attributes corresponding to backing image and

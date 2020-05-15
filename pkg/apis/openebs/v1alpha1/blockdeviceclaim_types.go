@@ -86,10 +86,10 @@ type DeviceClaimDetails struct {
 	//    specified then the format should match with the FSType in BD
 	BlockVolumeMode BlockDeviceVolumeMode `json:"blockVolumeMode,omitempty"`
 
-	//Format of the device required, eg:ext4, xfs
+	// Format of the device required, eg:ext4, xfs
 	DeviceFormat string `json:"formatType,omitempty"`
 
-	//AllowPartition represents whether to claim a full block device or a device that is a partition
+	// AllowPartition represents whether to claim a full block device or a device that is a partition
 	AllowPartition bool `json:"allowPartition,omitempty"`
 }
 

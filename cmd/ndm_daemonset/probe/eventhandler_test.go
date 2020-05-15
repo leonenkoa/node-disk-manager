@@ -18,9 +18,10 @@ package probe
 
 import (
 	"fmt"
-	"github.com/openebs/node-disk-manager/blockdevice"
 	"sync"
 	"testing"
+
+	"github.com/openebs/node-disk-manager/blockdevice"
 
 	"github.com/openebs/node-disk-manager/cmd/ndm_daemonset/controller"
 	apis "github.com/openebs/node-disk-manager/pkg/apis/openebs/v1alpha1"
@@ -34,7 +35,7 @@ import (
 )
 
 var (
-	//mockDiskuid    = "disk-fake-uid"
+	// mockDiskuid    = "disk-fake-uid"
 	mockBDuid      = "blockdevice-fake-uid"
 	ignoreDiskUuid = "ignore-disk-uuid"
 	fakeHostName   = "node-name"
@@ -147,7 +148,7 @@ func TestAddBlockDeviceEvent(t *testing.T) {
 		Probes:         make([]*controller.Probe, 0),
 		NodeAttributes: nodeAttributes,
 	}
-	//add one filter
+	// add one filter
 	filter := &fakeFilter{}
 	filter1 := &controller.Filter{
 		Name:      "filter1",

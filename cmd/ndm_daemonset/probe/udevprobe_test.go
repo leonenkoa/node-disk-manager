@@ -18,9 +18,10 @@ package probe
 
 import (
 	"errors"
-	"github.com/openebs/node-disk-manager/blockdevice"
 	"sync"
 	"testing"
+
+	"github.com/openebs/node-disk-manager/blockdevice"
 
 	"github.com/openebs/node-disk-manager/cmd/ndm_daemonset/controller"
 	apis "github.com/openebs/node-disk-manager/pkg/apis/openebs/v1alpha1"

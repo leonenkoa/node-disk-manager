@@ -72,7 +72,7 @@ func TestClientsetNamespace(t *testing.T) {
 	err1 := cl.setNamespace()
 	ns1 := cl.namespace
 
-	//setting namespace environment variable
+	// setting namespace environment variable
 	_ = os.Setenv(NamespaceENV, fakeNamespace)
 
 	// setting namespace in client when env is available

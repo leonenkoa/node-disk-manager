@@ -17,10 +17,11 @@ limitations under the License.
 package controller
 
 import (
-	"github.com/openebs/node-disk-manager/blockdevice"
 	"sync"
 	"testing"
 	"time"
+
+	"github.com/openebs/node-disk-manager/blockdevice"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -41,7 +42,7 @@ func (f *fakeFilter) Exclude(fakeDiskInfo *blockdevice.BlockDevice) bool {
 	return fakeDiskInfo.UUID != matchDiskUuid
 }
 
-//Add one new filter and get the list of the filters and match them
+// Add one new filter and get the list of the filters and match them
 func TestAddNewFilter(t *testing.T) {
 	filters := make([]*Filter, 0)
 	expectedFilterList := make([]*Filter, 0)
@@ -71,7 +72,7 @@ func TestAddNewFilter(t *testing.T) {
 	}
 }
 
-//Add some new filters and get the list of the filters and match them
+// Add some new filters and get the list of the filters and match them
 func TestListFilter(t *testing.T) {
 	filters := make([]*Filter, 0)
 	expectedFilterList := make([]*Filter, 0)

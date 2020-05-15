@@ -93,7 +93,7 @@ func freeCharPtr(s *C.char) {
 	C.free(unsafe.Pointer(s))
 }
 
-//DiskInfoFromLibudev returns disk attribute extracted using libudev apicalls.
+// DiskInfoFromLibudev returns disk attribute extracted using libudev apicalls.
 func (device *UdevDevice) DiskInfoFromLibudev() UdevDiskDetails {
 	devLinks := device.GetDevLinks()
 	diskDetails := UdevDiskDetails{

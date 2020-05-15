@@ -28,15 +28,6 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:openapi-gen=true
 
-// BlockDevice is the Schema used to represent a BlockDevice CR
-type BlockDevice struct {
-	metav1.TypeMeta   `json:",inline"`
-	metav1.ObjectMeta `json:"metadata,omitempty"`
-
-	Spec   DeviceSpec   `json:"spec,omitempty"`
-	Status DeviceStatus `json:"status,omitempty"`
-}
-
 // DeviceSpec defines the properties and runtime status of a BlockDevice
 type DeviceSpec struct {
 	// NodeAttributes has the details of the node on which BD is attached
@@ -81,6 +72,15 @@ type DeviceSpec struct {
 	// better design.
 	// TODO @kmova to be implemented/deprecated
 	AggregateDevice string `json:"aggregateDevice,omitempty"`
+}
+
+// BlockDevice is the Schema used to represent a BlockDevice CR
+type BlockDevice struct {
+	metav1.TypeMeta   `json:",inline"`
+	metav1.ObjectMeta `json:"metadata,omitempty"`
+
+	Spec   DeviceSpec   `json:"spec,omitempty"`
+	Status DeviceStatus `json:"status,omitempty"`
 }
 
 // NodeAttribute defines the attributes of a node where
@@ -160,10 +160,10 @@ type DeviceDetails struct {
 
 // FileSystemInfo defines the filesystem type and mountpoint of the device if it exists
 type FileSystemInfo struct {
-	//Type represents the FileSystem type of the block device
+	// Type represents the FileSystem type of the block device
 	Type string `json:"fsType,omitempty"`
 
-	//MountPoint represents the mountpoint of the block device.
+	// MountPoint represents the mountpoint of the block device.
 	Mountpoint string `json:"mountPoint,omitempty"`
 }
 

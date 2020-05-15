@@ -34,8 +34,9 @@ package seachest
 import "C"
 import (
 	"fmt"
-	"k8s.io/klog"
 	"unsafe"
+
+	"k8s.io/klog"
 )
 
 // Seachest errors are converted to string using this function

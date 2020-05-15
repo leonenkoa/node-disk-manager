@@ -17,8 +17,6 @@ limitations under the License.
 package sanity
 
 import (
-	. "github.com/onsi/ginkgo"
-	. "github.com/onsi/gomega"
 	"github.com/openebs/node-disk-manager/integration_tests/k8s"
 	"github.com/openebs/node-disk-manager/integration_tests/udev"
 	apis "github.com/openebs/node-disk-manager/pkg/apis/openebs/v1alpha1"

@@ -17,8 +17,9 @@ limitations under the License.
 package udevevent
 
 import (
-	"github.com/openebs/node-disk-manager/blockdevice"
 	"testing"
+
+	"github.com/openebs/node-disk-manager/blockdevice"
 
 	"github.com/openebs/node-disk-manager/cmd/ndm_daemonset/controller"
 	libudevwrapper "github.com/openebs/node-disk-manager/pkg/udev"

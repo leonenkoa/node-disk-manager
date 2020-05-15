@@ -20,13 +20,13 @@ spec:
     compliance: <compliance of disk> #like "SPC-4"
     vendor: <vendor of disk> #like Google
   devlinks:
-  - kind: by-id
-    links:
-    - <link1> # like /dev/disk/by-id/scsi-0Google_PersistentDisk_disk-2
-    - <link2> # like /dev/disk/by-id/google-disk-2
-  - kind: by-path
-    links:
-    - <link1> # like /dev/disk/by-path/virtio-pci-0000:00:03.0-scsi-0:0:2:0
+    - kind: by-id
+      links:
+        - <link1> # like /dev/disk/by-id/scsi-0Google_PersistentDisk_disk-2
+        - <link2> # like /dev/disk/by-id/google-disk-2
+    - kind: by-path
+      links:
+        - <link1> # like /dev/disk/by-path/virtio-pci-0000:00:03.0-scsi-0:0:2:0
   nodeAttributes:
     nodeName: <node name> # output of `kubectl get nodes` can be used
   path: <devpath> # like /dev/sdb

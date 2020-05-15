@@ -17,12 +17,13 @@ limitations under the License.
 package probe
 
 import (
+	"strings"
+
 	"github.com/openebs/node-disk-manager/blockdevice"
 	"github.com/openebs/node-disk-manager/cmd/ndm_daemonset/controller"
 	"github.com/openebs/node-disk-manager/pkg/mount"
 	"github.com/openebs/node-disk-manager/pkg/util"
 	"k8s.io/klog"
-	"strings"
 )
 
 // mountProbe contains required variables for populating diskInfo

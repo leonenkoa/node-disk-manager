@@ -17,9 +17,10 @@ limitations under the License.
 package setup
 
 import (
+	"time"
+
 	apiextclient "k8s.io/apiextensions-apiserver/pkg/client/clientset/clientset"
 	"k8s.io/client-go/rest"
-	"time"
 )
 
 const (

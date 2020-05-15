@@ -151,7 +151,7 @@ func (r *ReconcileBlockDeviceClaim) claimDeviceForBlockDeviceClaim(
 		// Get the capacity requested in the claim
 		_, err := verify.GetRequestedCapacity(instance.Spec.Resources.Requests)
 		if err != nil {
-			//Update deviceClaim CR with error string
+			// Update deviceClaim CR with error string
 			instance.Status.Phase = apis.BlockDeviceClaimStatusInvalidCapacity
 			err1 := r.updateClaimStatus(instance.Status.Phase, instance)
 			if err1 != nil {
@@ -265,8 +265,8 @@ func (r *ReconcileBlockDeviceClaim) releaseClaimedBlockDevice(
 
 	reqLogger.Info("Deleting external dependencies for CR:" + instance.Name)
 
-	//Get BlockDevice list on all nodes
-	//empty selector is used to select everything.
+	// Get BlockDevice list on all nodes
+	// empty selector is used to select everything.
 	selector := &v1.LabelSelector{}
 	bdList, err := r.getListofDevices(selector)
 	if err != nil {
@@ -330,7 +330,7 @@ func (r *ReconcileBlockDeviceClaim) GetBlockDevice(name string) (*apis.BlockDevi
 //  Need to merge these 2 functions.
 func (r *ReconcileBlockDeviceClaim) getListofDevices(selector *v1.LabelSelector) (*apis.BlockDeviceList, error) {
 
-	//Initialize a deviceList object.
+	// Initialize a deviceList object.
 	listBlockDevice := &apis.BlockDeviceList{
 		TypeMeta: v1.TypeMeta{
 			Kind:       "BlockDevice",
@@ -347,7 +347,7 @@ func (r *ReconcileBlockDeviceClaim) getListofDevices(selector *v1.LabelSelector)
 		opts.LabelSelector = sel
 	}
 
-	//Fetch deviceList with matching criteria
+	// Fetch deviceList with matching criteria
 	err := r.client.List(context.TODO(), opts, listBlockDevice)
 	if err != nil {
 		return nil, err

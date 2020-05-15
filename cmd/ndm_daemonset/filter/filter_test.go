@@ -17,9 +17,10 @@ limitations under the License.
 package filter
 
 import (
-	"github.com/openebs/node-disk-manager/blockdevice"
 	"sync"
 	"testing"
+
+	"github.com/openebs/node-disk-manager/blockdevice"
 
 	"github.com/openebs/node-disk-manager/cmd/ndm_daemonset/controller"
 	"github.com/stretchr/testify/assert"
@@ -38,7 +39,7 @@ func (f *fakeFilter) Exclude(*blockdevice.BlockDevice) bool {
 	return true
 }
 
-//Add one new filter and get the list of the filters and match them
+// Add one new filter and get the list of the filters and match them
 func TestRegisterFilter(t *testing.T) {
 	expectedFilterList := make([]*controller.Filter, 0)
 	filters := make([]*controller.Filter, 0)

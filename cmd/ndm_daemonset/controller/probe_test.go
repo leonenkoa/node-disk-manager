@@ -47,7 +47,7 @@ func (np *fakeProbe) FillBlockDeviceDetails(fakeBlockDevice *bd.BlockDevice) {
 	fakeBlockDevice.DeviceAttributes.Vendor = fakeVendor
 }
 
-//Add one new probe and get the list of the probes and match them
+// Add one new probe and get the list of the probes and match them
 func TestAddNewProbe(t *testing.T) {
 	probes := make([]*Probe, 0)
 	expectedProbeList := make([]*Probe, 0)
@@ -77,7 +77,7 @@ func TestAddNewProbe(t *testing.T) {
 	}
 }
 
-//Add some new probes and get the list of the probes and match them
+// Add some new probes and get the list of the probes and match them
 func TestListProbe(t *testing.T) {
 	probes := make([]*Probe, 0)
 	expectedProbeList := make([]*Probe, 0)

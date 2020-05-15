@@ -18,9 +18,9 @@ package util
 
 import "os"
 
-//import "syscall"
+// import "syscall"
 
-//SparseFileCreate will create a new sparse file if none exists
+// SparseFileCreate will create a new sparse file if none exists
 // at the give path and will set the size to specified value
 func SparseFileCreate(path string, size int64) error {
 	f, err := os.Create(path)
@@ -30,7 +30,7 @@ func SparseFileCreate(path string, size int64) error {
 	return f.Truncate(size)
 }
 
-//SparseFileDelete will delete the sparse file if it exists
+// SparseFileDelete will delete the sparse file if it exists
 func SparseFileDelete(path string) error {
 	err := os.Remove(path)
 	if os.IsNotExist(err) {
@@ -39,7 +39,7 @@ func SparseFileDelete(path string) error {
 	return err
 }
 
-//SparseFileInfo will return the stats of the sparse file
+// SparseFileInfo will return the stats of the sparse file
 func SparseFileInfo(path string) (os.FileInfo, error) {
 	return os.Stat(path)
 }

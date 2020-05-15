@@ -29,7 +29,7 @@ type event struct {
 	eventDetails controller.EventMessage
 }
 
-//newEvent returns a copy of event struct
+// newEvent returns a copy of event struct
 func newEvent() *event {
 	event := &event{
 		eventDetails: controller.EventMessage{},
