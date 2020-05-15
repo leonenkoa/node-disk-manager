@@ -111,9 +111,4 @@ func (rp *raidProbe) FillBlockDeviceDetails(blockDevice *blockdevice.BlockDevice
 		blockDevice.DeviceAttributes.DriveType = driveInfo.Raid
 		klog.V(4).Infof("Disk: %s DriveType:%s filled by raid probe.", blockDevice.DevPath, blockDevice.DeviceAttributes.DeviceType)
 	}
-
-	if blockDevice.Capacity.Storage == 0 {
-		blockDevice.Capacity.Storage = driveInfo.Size
-		klog.V(4).Infof("Disk: %s DriveType:%s filled by raid probe.", blockDevice.DevPath, blockDevice.Capacity.Storage)
-	}
 }
